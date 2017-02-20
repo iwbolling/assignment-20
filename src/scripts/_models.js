@@ -1,6 +1,6 @@
 export const BBCRadioModel = Backbone.Model.extend({
   initialize: function(givenRadio){
-    this.url = `http://www.bbc.co.uk/radio${givenRadio}/playlist.json`
+    this.url = `/proxy?api=http://www.bbc.co.uk/radio${givenRadio}/playlist.json`
   },
   parse: function(rawServerRes){
     if ( rawServerRes.playlist !== null  &&
@@ -13,7 +13,7 @@ export const BBCRadioModel = Backbone.Model.extend({
 // if (introducingOnly === true){}
 export const BBCRadioCollection = Backbone.Collection.extend({
   initialize: function(givenRadio){
-    this.url = `http://www.bbc.co.uk/radio${givenRadio}/playlist.json`
+    this.url = `/proxy?api=http://www.bbc.co.uk/radio${givenRadio}/playlist.json`
   },
   parse: function(rawServerRes){
     console.log("Collection parsing active.".toUpperCase());
@@ -21,7 +21,7 @@ export const BBCRadioCollection = Backbone.Collection.extend({
     var allPlaylistRes = rawServerRes.playlist;
     console.log(rawServerRes.playlist)
     for (var propertyStr in allPlaylistRes){
-      if (propertyStr !== "totd" && propertyStr !== "introducing"){
+      if (propertyStr === "a" || propertyStr === "b" || propertyStr === "c"){
         parsedRes.push(...allPlaylistRes[propertyStr]);
       }
     }
