@@ -10,7 +10,7 @@ export const BBCRadioModel = Backbone.Model.extend({
     } else return rawServerRes;
   }
 });
-// if (introducingOnly === true){}
+
 export const BBCRadioCollection = Backbone.Collection.extend({
   initialize: function(givenRadio){
     this.url = `/proxy?api=http://www.bbc.co.uk/radio${givenRadio}/playlist.json`

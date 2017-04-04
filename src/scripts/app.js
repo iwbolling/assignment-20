@@ -7,12 +7,9 @@ import {BBCRadioModel} from "./_models.js";
 import {BBCRadioCollection} from "./_models.js";
 import {MultiBBCRadioView} from "./_views.js";
 import {IntroducingView} from "./_views.js";
-// import {BBCintroducingTemplate} from "./templates/template-playlist.js";
 
 // GLOBAL VARIABLES - DOM ELEMENTS
 var divWholePage = document.querySelector("#app-container");
-
-
 
 // BACKBONE FUNCTIONS
 const AppRouter = Backbone.Router.extend({

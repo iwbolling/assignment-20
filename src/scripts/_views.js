@@ -1,6 +1,6 @@
 export const MultiBBCRadioView = Backbone.View.extend({
   el: "#app-container",
-  // events: "",
+  
   playlistTemplate: function(radioModelsList){
     let playlistThumbnails = radioModelsList.map(function(song){
       return `<div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
